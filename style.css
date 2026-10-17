@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #eaa8ee; /* Ваш новый цвет фона */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    overflow: hidden; /* Чтобы не было полос прокрутки из-за сердечек */
+    position: relative;
+    overflow: hidden; /* Чтобы не было прокрутки на странице с сердцем */
+}
+
+.container {
+    padding: 20px;
+    position: relative;
+    z-index: 10; /* Чтобы текст и кнопка были поверх сердечек */
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background-color: #c07dbe; /* Цвет кнопки в тон сердечкам */
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    background-color: #a666a3;
+    transform: scale(1.05);
+}
+
+h1 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.languages p {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 10px 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.back-btn:hover {
+    opacity: 1;
+}
+
+/* Стили для летающих сердечек */
+.heart {
+    position: absolute;
+    bottom: -10vh;
+    color: #c07dbe; /* Ваш цвет сердечек */
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+    animation: floatUp linear forwards;
+    opacity: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
